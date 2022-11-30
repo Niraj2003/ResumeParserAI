@@ -55,13 +55,13 @@ while(i<n):
     SKILLS_DB.add(s)
     i+=1
 
-print(SKILLS_DB)
+# print(SKILLS_DB)
 rpath = input("Enter path of Candidate's Resume : ")
 text = extract_text_from_docx(rpath)
 skills = extract_skills(text)
 print("Matched Skills are - ", len(skills), " -> ",skills)
 
-x = len(skills)/n * 100
+x = len(skills)/len(SKILLS_DB) * 100
 print("Percent Match - ", round(x,2), "%")
 
 if(x > 75):
